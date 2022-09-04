@@ -1,0 +1,45 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="companion">
+      <h2 data-cy="companionDetailsHeading"><span jhiTranslate="adopteUnCompagnonApp.companion.detail.title">Companion</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ companion.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="adopteUnCompagnonApp.companion.name">Name</span></dt>
+        <dd>
+          <span>{{ companion.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="adopteUnCompagnonApp.companion.photo">Photo</span></dt>
+        <dd>
+          <div *ngIf="companion.photo">
+            <a (click)="openFile(companion.photo, companion.photoContentType)">
+              <img
+                [src]="'data:' + companion.photoContentType + ';base64,' + companion.photo"
+                style="max-width: 100%"
+                alt="companion image"
+              />
+            </a>
+            {{ companion.photoContentType }}, {{ byteSize(companion.photo) }}
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/companion', companion.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

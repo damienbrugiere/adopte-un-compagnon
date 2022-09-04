@@ -1,0 +1,25 @@
+{
+  "adopteUnCompagnonApp": {
+    "companion": {
+      "home": {
+        "title": "Companions",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Companion",
+        "createOrEditLabel": "Créer ou éditer un Companion",
+        "notFound": "Aucun Companion trouvé"
+      },
+      "created": "Un nouveau Companion a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Companion avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Companion avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Companion {{ id }} ?"
+      },
+      "detail": {
+        "title": "Companion"
+      },
+      "id": "ID",
+      "name": "Name",
+      "photo": "Photo"
+    }
+  }
+}
